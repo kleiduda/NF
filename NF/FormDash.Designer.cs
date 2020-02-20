@@ -58,7 +58,7 @@
             this.btnEntrada.IdleFillColor = System.Drawing.Color.White;
             this.btnEntrada.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.btnEntrada.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnEntrada.Location = new System.Drawing.Point(360, 282);
+            this.btnEntrada.Location = new System.Drawing.Point(12, 330);
             this.btnEntrada.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEntrada.Name = "btnEntrada";
             this.btnEntrada.Size = new System.Drawing.Size(208, 107);
@@ -85,7 +85,7 @@
             this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.White;
             this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.bunifuThinButton21.Location = new System.Drawing.Point(598, 282);
+            this.bunifuThinButton21.Location = new System.Drawing.Point(12, 445);
             this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bunifuThinButton21.Name = "bunifuThinButton21";
             this.bunifuThinButton21.Size = new System.Drawing.Size(208, 107);
@@ -112,7 +112,7 @@
             this.btnResultado.IdleFillColor = System.Drawing.Color.White;
             this.btnResultado.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.btnResultado.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnResultado.Location = new System.Drawing.Point(477, 530);
+            this.btnResultado.Location = new System.Drawing.Point(12, 572);
             this.btnResultado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnResultado.Name = "btnResultado";
             this.btnResultado.Size = new System.Drawing.Size(208, 58);
