@@ -121,7 +121,7 @@
             this.btnSqlServer.Text = "Importar Dados";
             this.btnSqlServer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSqlServer.Textcolor = System.Drawing.Color.White;
-            this.btnSqlServer.TextFont = new System.Drawing.Font("Open Sans ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSqlServer.TextFont = new System.Drawing.Font("Open Sans Extrabold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSqlServer.Click += new System.EventHandler(this.btnSqlServer_Click);
             // 
             // dgvDados
@@ -157,7 +157,7 @@
             this.dgvDados.GridColor = System.Drawing.Color.White;
             this.dgvDados.HeaderBgColor = System.Drawing.Color.White;
             this.dgvDados.HeaderForeColor = System.Drawing.Color.Black;
-            this.dgvDados.Location = new System.Drawing.Point(14, 82);
+            this.dgvDados.Location = new System.Drawing.Point(15, 82);
             this.dgvDados.MultiSelect = false;
             this.dgvDados.Name = "dgvDados";
             this.dgvDados.ReadOnly = true;

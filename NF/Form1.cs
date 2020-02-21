@@ -135,7 +135,6 @@ namespace NF
         {
             try
             {
-
                 string rpta = "";
                 if (dgvDados.RowCount < 0)
                 {
@@ -143,11 +142,11 @@ namespace NF
                 }
                 else
                 {
-
                     for (int i = 0; i < dgvDados.Rows.Count; i++)
                     {
                         Comando.Connection = Con.OpenConection();
-                        Comando.CommandText = "insert into tb_entrada (codigo, quantidade, data) values (@codigo, @quantidade, @data)";
+                        Comando.CommandText = "Inc_upd_entrada";
+                        Comando.CommandType = CommandType.StoredProcedure;
 
                         Comando.Parameters.AddWithValue("@codigo", Convert.ToString(dgvDados.Rows[i].Cells["codigo"].Value.ToString().TrimEnd()));
                         Comando.Parameters.AddWithValue("@quantidade", Convert.ToString(dgvDados.Rows[i].Cells["quantidade"].Value.ToString().TrimEnd()));
@@ -182,13 +181,8 @@ namespace NF
 
                         ////Application.DoEvents();
                         //ProgressBar.Show();
-
                     }
-
                 }
-
-
-
             }
             catch (Exception ex)
             {

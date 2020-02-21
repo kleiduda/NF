@@ -147,7 +147,8 @@ namespace NF
                     for (int i = 0; i < dgvDados.Rows.Count; i++)
                     {
                         Comando.Connection = Con.OpenConection();
-                        Comando.CommandText = "insert into tb_saida (codigo, quantidade, data) values (@codigo, @quantidade, @data)";
+                        Comando.CommandText = "Inc_upd_saida";
+                        Comando.CommandType = CommandType.StoredProcedure;
 
                         Comando.Parameters.AddWithValue("@codigo", Convert.ToString(dgvDados.Rows[i].Cells["codigo"].Value.ToString().TrimEnd()));
                         Comando.Parameters.AddWithValue("@quantidade", Convert.ToString(dgvDados.Rows[i].Cells["quantidade"].Value.ToString().TrimEnd()));
