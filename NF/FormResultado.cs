@@ -27,6 +27,8 @@ namespace NF
         private void FormResultado_Load(object sender, EventArgs e)
         {
             listarCadastros();
+            listarCadastrosSoEntrada();
+            listarCadastrosSaida();
             FormatarTabela();
         }
 
@@ -40,6 +42,28 @@ namespace NF
             DataTable DtResult = new DataTable();
             SqlDat.Fill(DtResult);
             dgvResultado.DataSource = DtResult;
+        }
+        public void listarCadastrosSoEntrada()
+        {
+            Comando.Connection = Con.OpenConection();
+            Comando.CommandText = "select * from tb_entrada where codigo not in (select codigo from tb_saida)";
+            Comando.CommandType = CommandType.Text;
+
+            SqlDataAdapter SqlDat = new SqlDataAdapter(Comando);
+            DataTable DtResult = new DataTable();
+            SqlDat.Fill(DtResult);
+            dgvSoentrada.DataSource = DtResult;
+        }
+        public void listarCadastrosSaida()
+        {
+            Comando.Connection = Con.OpenConection();
+            Comando.CommandText = "select * from tb_saida where codigo not in (select codigo from tb_entrada)";
+            Comando.CommandType = CommandType.Text;
+
+            SqlDataAdapter SqlDat = new SqlDataAdapter(Comando);
+            DataTable DtResult = new DataTable();
+            SqlDat.Fill(DtResult);
+            dgvSaida.DataSource = DtResult;
         }
         public void FormatarTabela()
         {
@@ -83,7 +107,70 @@ namespace NF
                     XcelApp.Quit();
                 }
             }
+        }
 
+        private void btnSoEntrada_Click(object sender, EventArgs e)
+        {
+            if (dgvSoentrada.Rows.Count > 0)
+            {
+                try
+                {
+                    XcelApp.Application.Workbooks.Add(Type.Missing);
+                    for (int i = 1; i < dgvSoentrada.Columns.Count + 1; i++)
+                    {
+                        XcelApp.Cells[1, i] = dgvSoentrada.Columns[i - 1].HeaderText;
+                    }
+                    //
+                    for (int i = 0; i < dgvSoentrada.Rows.Count - 1; i++)
+                    {
+                        for (int j = 0; j < dgvSoentrada.Columns.Count; j++)
+                        {
+                            XcelApp.Cells[i + 2, j + 1] = dgvSoentrada.Rows[i].Cells[j].Value.ToString();
+                        }
+                    }
+                    //
+                    XcelApp.Columns.AutoFit();
+                    //
+                    XcelApp.Visible = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro : " + ex.Message);
+                    XcelApp.Quit();
+                }
+            }
+        }
+
+        private void btnSaida_Click(object sender, EventArgs e)
+        {
+            if (dgvSaida.Rows.Count > 0)
+            {
+                try
+                {
+                    XcelApp.Application.Workbooks.Add(Type.Missing);
+                    for (int i = 1; i < dgvSaida.Columns.Count + 1; i++)
+                    {
+                        XcelApp.Cells[1, i] = dgvSaida.Columns[i - 1].HeaderText;
+                    }
+                    //
+                    for (int i = 0; i < dgvSaida.Rows.Count - 1; i++)
+                    {
+                        for (int j = 0; j < dgvSaida.Columns.Count; j++)
+                        {
+                            XcelApp.Cells[i + 2, j + 1] = dgvSaida.Rows[i].Cells[j].Value.ToString();
+                        }
+                    }
+                    //
+                    XcelApp.Columns.AutoFit();
+                    //
+                    XcelApp.Visible = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro : " + ex.Message);
+                    XcelApp.Quit();
+                }
+            }
         }
     }
 }
