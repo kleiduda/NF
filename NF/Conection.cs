@@ -12,7 +12,7 @@ namespace NF
     {
         public string serverConection { get; set; }
 
-        static private string ServerConexao = @"Server=DESKTOP-54ROJNI\SQLEXPRESS; DataBase=dbNf; Integrated Security=true";
+        static private string ServerConexao = @"Server=DESKTOP-U5LQQ4F\SQLEXPRESS; DataBase=dbNf; Integrated Security=true";
         private SqlConnection Conexao = new SqlConnection(ServerConexao);
 
         //abrindo a conexão
